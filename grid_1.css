@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@300&display=swap');
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	height: 100%;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+	font-family: 'Ubuntu', sans-serif;
+	font-size: 1.2rem;
+	min-height: 100%;  
+	text-align: center;
+}
+
+.grid_container{
+	display: grid;
+	gap: 5px;
+	grid-template: 
+	"header" 100px
+	"navbar" 50px
+	"main"	auto
+	"sidebar" 200px
+	"footer" 30px
+	;
+}
+
+.header{
+	grid-area: header;
+	background-color: #17f39eb2;
+}
+
+
+.navbar{
+	grid-area: navbar;
+	background-color: #03c692d4;
+}
+
+.main{
+	grid-area: main;
+	background-color: #26cf91;
+}
+
+.sidebar{
+	grid-area: sidebar;
+	background-color: #00ff9d;
+}
+
+.footer{
+	grid-area: footer;
+	background-color: #0fda89;
+}
+
+@media handheld, screen and (min-width:576px) and (max-width:767px){
+
+	.grid_container{
+
+		grid-template: 
+		"header 	header" 	100px 
+		"navbar 	navbar" 	50px
+		"sidebar 	main" 		auto
+		"footer 	footer" 	100px /
+		 200px 		auto;
+ 	}
+
+}
+
+
+@media handheld, screen and (min-width:768px) and (max-width:991px){
+	.grid_container{
+		grid-template: 
+		"header 	header 	header" 	100px 
+		"navbar 	main 	sidebar" 	auto
+		"footer 	footer 	footer" 	100px /
+		 400px 		auto 	200px;
+	}
+}
+
+@media handheld, screen and (min-width:991px) and (max-width:1200px){
+	.grid_container{
+		grid-template: 
+		"header 	navbar 	navbar" 	100px 
+		"main 	    main 	sidebar" 	auto
+		"footer 	footer 	footer" 	100px /
+		 400px 		auto 	200px;
+	}
+}
+
+@media handheld, screen and (min-width:1200px){
+	.grid_container{
+		grid-template: 
+		"header 	header 	header" 	100px 
+		"navbar 	navbar 	navbar" 	80px
+		"main       main    sidebar"    auto
+		"footer 	footer 	footer" 	100px /
+		 400px 		auto 	200px;
+	}
+}
+
